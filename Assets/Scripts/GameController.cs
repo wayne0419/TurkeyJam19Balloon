@@ -2,10 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
     public Text gameOverText;
+    public Button restartButton;
     public static GameController GetInstance(){
         return GameObject.Find("EventSystem").GetComponent<GameController>();
     }
@@ -22,8 +24,13 @@ public class GameController : MonoBehaviour
         
     }
 
+    public void EnterLevel(){
+        SceneManager.LoadScene("Level");
+    }
+
     public void GameOver(){
         gameOverText.gameObject.SetActive(true);
+        restartButton.gameObject.SetActive(true);
         GetComponent<RestartOnKey>().enabled = true;
     }
 }
