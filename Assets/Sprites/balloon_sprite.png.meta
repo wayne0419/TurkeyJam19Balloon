@@ -1,0 +1,367 @@
+fileFormatVersion: 2
+guid: 055e9f9849c5e5b478609ad6050dc767
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 2124211568631977630
+    second: balloon_sprite_0
+  - first:
+      213: -8351138115438123177
+    second: balloon_sprite_1
+  - first:
+      213: 1601842765903373479
+    second: balloon_sprite_2
+  - first:
+      213: 6739844205181177213
+    second: balloon_sprite_3
+  - first:
+      213: 3236303830418687523
+    second: balloon_sprite_4
+  - first:
+      213: 2359625750806436431
+    second: balloon_sprite_5
+  - first:
+      213: 5642543490016703842
+    second: balloon_sprite_6
+  - first:
+      213: -3851031997860157863
+    second: balloon_sprite_7
+  - first:
+      213: -5571272526711207346
+    second: balloon_sprite_8
+  - first:
+      213: 4965014972045597636
+    second: balloon_sprite_9
+  - first:
+      213: -3294638876788813869
+    second: balloon_sprite_10
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: balloon_sprite_0
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 884
+        width: 201
+        height: 225
+      alignment: 9
+      pivot: {x: 0.5, y: 0.3449612}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b8f4a586e3fa4e8a8efddadaac63c6f
+      internalID: 2124211568631977630
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: balloon_sprite_1
+      rect:
+        serializedVersion: 2
+        x: 451
+        y: 935
+        width: 218
+        height: 163
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee3d47cdb3f0441648d6ce22554cf5b0
+      internalID: -8351138115438123177
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: balloon_sprite_2
+      rect:
+        serializedVersion: 2
+        x: 801
+        y: 936
+        width: 286
+        height: 163
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5d8fc4e0db7b49c094b8dde00104f31
+      internalID: 1601842765903373479
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: balloon_sprite_3
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 675
+        width: 226
+        height: 178
+      alignment: 9
+      pivot: {x: 0.5, y: 0.4128994}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 842427f9af3cb4efba718147bf9cb82d
+      internalID: 6739844205181177213
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: balloon_sprite_4
+      rect:
+        serializedVersion: 2
+        x: 447
+        y: 666
+        width: 244
+        height: 173
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36557308}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5656a6c6fab58400dbb88602bd5af6e1
+      internalID: 3236303830418687523
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: balloon_sprite_5
+      rect:
+        serializedVersion: 2
+        x: 793
+        y: 685
+        width: 286
+        height: 163
+      alignment: 9
+      pivot: {x: 0.4999998, y: 0.42866302}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6d480c1bec4e4e3baf532de0a9d4778
+      internalID: 2359625750806436431
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: balloon_sprite_6
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 374
+        width: 201
+        height: 225
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f76ca532d65e4e198040fc838c9130c
+      internalID: 5642543490016703842
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: balloon_sprite_7
+      rect:
+        serializedVersion: 2
+        x: 454
+        y: 425
+        width: 218
+        height: 163
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb3e9b287dbbf4719ae9274d220754f6
+      internalID: -3851031997860157863
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: balloon_sprite_8
+      rect:
+        serializedVersion: 2
+        x: 804
+        y: 426
+        width: 286
+        height: 163
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56548d88c29de49e38d513e04c11423f
+      internalID: -5571272526711207346
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: balloon_sprite_9
+      rect:
+        serializedVersion: 2
+        x: 274
+        y: 131
+        width: 188
+        height: 145
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 661efdac4f2bd46a9821940cdb336ba9
+      internalID: 4965014972045597636
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: balloon_sprite_10
+      rect:
+        serializedVersion: 2
+        x: 796
+        y: 175
+        width: 286
+        height: 163
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0fe5e5ea210a74263b9e6b06d4a4a91f
+      internalID: -3294638876788813869
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
