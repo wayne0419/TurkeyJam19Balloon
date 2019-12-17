@@ -1,0 +1,33 @@
+{
+    "name": "BalloonInputAction",
+    "maps": [
+        {
+            "name": "Balloon",
+            "id": "ab6885cc-b44e-4301-be9d-23d161b1bdb5",
+            "actions": [
+                {
+                    "name": "Pop",
+                    "type": "Value",
+                    "id": "68b78fc3-0198-4c01-9b03-eb1500e9363c",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "f26477c5-cf0a-4a91-92da-cb50d49e1a49",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Pop",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}

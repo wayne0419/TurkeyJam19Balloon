@@ -33,21 +33,11 @@ public class Balloon : MonoBehaviour
         }
         Vector2 dir = PlayerInput.GetInstance().GetXY();
         if (dir.magnitude > 0.3f){
-            float angle = Vector3.SignedAngle(Vector3.down, dir, Vector3.forward);
-            transform.rotation = Quaternion.Euler(0,0,angle);
+            SetDirection(dir);
         }
     
         if (PlayerInput.GetInstance().GetBoost()){
-            balloon_fly.Play();
-            if (volume > minVolume){
-                volume = Mathf.Clamp(volume*(1-emitRatio), minVolume, maxVolume);
-                rb.AddForce(-dir*2, ForceMode2D.Impulse);
-                animator.SetTrigger("fly");
-            }
-            else if (volume <= minVolume)
-            {
-                GameController.GetInstance().GameOver();
-            }
+            PopBalloon(dir);
         }
         transform.localScale = Mathf.Sqrt(volume)*orig_scale;
     }
@@ -56,6 +46,23 @@ public class Balloon : MonoBehaviour
         balloon_collect.Play();
         volume *= 1.5f;
         Debug.Log("Get pickup!"); 
+    }
+
+    public void SetDirection(Vector2 dir){
+        float angle = Vector3.SignedAngle(Vector3.down, dir, Vector3.forward);
+        transform.rotation = Quaternion.Euler(0,0,angle);
+    }
+
+    public void PopBalloon(Vector2 dir){
+        balloon_fly.Play();
+        if (volume > minVolume){
+            volume = Mathf.Clamp(volume*(1-emitRatio), minVolume, maxVolume);
+            rb.AddForce(-dir*2, ForceMode2D.Impulse);
+            animator.SetTrigger("fly");
+        }
+        else if (volume <= minVolume){
+            GameController.GetInstance().GameOver();
+        }
     }
 
     void OnCollisionEnter2D(Collision2D other){

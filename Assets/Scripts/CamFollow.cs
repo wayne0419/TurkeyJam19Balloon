@@ -25,7 +25,8 @@ public class CamFollow : MonoBehaviour
     {
         if (targetTransform){
             float dY = (targetTransform.position.y-transform.position.y)*0.1f;
-            transform.position += new Vector3(0f, dY, 0f);
+            float dX = (targetTransform.position.x-transform.position.x)*0.1f;
+            transform.position += new Vector3(dX, dY, 0f);
         }
     }
 }

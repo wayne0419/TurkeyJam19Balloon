@@ -32,7 +32,9 @@ public class PlayerInput : MonoBehaviour
     public Vector2 GetXY(){
         float x = Input.GetAxis("Horizontal");
         float y = Input.GetAxis("Vertical");
-        return new Vector2(x,y);
+        Vector2 dir = new Vector2(x,y);
+        if (dir.magnitude < 0.3f) dir = Vector2.zero;
+        return dir;
     }
     public bool GetBoost(){
         return (Input.GetKeyDown(boostKey) || Input.GetKeyDown(boostButton));
