@@ -9,6 +9,8 @@ public class LevelManager : MonoBehaviour
     public GameObject[] levelPrefabList;
     public GameObject balloon;
     public GameObject grounds;
+    public GameObject bottomSpikes;
+    public float bottomSpikesSpeed = 2f;
     // Start is called before the first frame update
     void Start()
     {
@@ -40,6 +42,9 @@ public class LevelManager : MonoBehaviour
 
     void MoveUp(){
         transform.position += Vector3.up * 10f;
+        if (bottomSpikes.transform.position.y < transform.position.y - 15f){
+            bottomSpikes.transform.position = transform.position + Vector3.down * 15f;
+        }
         for (int i=0; i<3; i++){
             Destroy(levels[2,i]);
             levels[2,i] = levels[1,i];
@@ -51,8 +56,9 @@ public class LevelManager : MonoBehaviour
     }
 
     void MoveRight(){
-        grounds.transform.position += Vector3.right * 10f;
         transform.position += Vector3.right * 10f;
+        grounds.transform.position += Vector3.right * 10f;
+        bottomSpikes.transform.position += Vector3.right * 10f;
         for (int i=0; i<3; i++){
             GameObject level = levels[i,0];
             level.transform.localPosition += Vector3.right * 20f;
@@ -64,8 +70,9 @@ public class LevelManager : MonoBehaviour
         }
     }
     void MoveLeft(){
-        grounds.transform.position += Vector3.left * 10f;
         transform.position += Vector3.left * 10f;
+        grounds.transform.position += Vector3.left * 10f;
+        bottomSpikes.transform.position += Vector3.left * 10f;
         for (int i=0; i<3; i++){
             GameObject level = levels[i,2];
             level.transform.localPosition += Vector3.left * 20f;
@@ -79,6 +86,9 @@ public class LevelManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (balloon.transform.position.y > 0f){
+            bottomSpikes.transform.position += Vector3.up * bottomSpikesSpeed * Time.deltaTime; 
+        }
         Vector3 rel_pos = balloon.transform.position - transform.position;
         if (rel_pos.y > 5f){
             MoveUp();

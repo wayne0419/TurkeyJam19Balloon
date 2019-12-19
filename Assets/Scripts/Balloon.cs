@@ -54,6 +54,7 @@ public class Balloon : MonoBehaviour
     }
 
     public void PopBalloon(Vector2 dir){
+        dir = dir.normalized;
         balloon_fly.Play();
         if (volume > minVolume){
             volume = Mathf.Clamp(volume*(1-emitRatio), minVolume, maxVolume);
