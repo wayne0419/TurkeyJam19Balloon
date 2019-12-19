@@ -11,7 +11,7 @@ public class CamFollow : MonoBehaviour
     {
         // set full screen
         Screen.fullScreen = true;
-        Screen.SetResolution(1600, 1600, true);
+        Screen.SetResolution(1125, 2436, true);
 
         if (targetTransform){
             offset = (targetTransform.position - transform.position);

@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5633044234729435190}
-  - component: {fileID: 5633044234729435185}
+  - component: {fileID: 1590367726301568496}
   - component: {fileID: 5633044234729435191}
   - component: {fileID: 1078883537319771764}
   - component: {fileID: 3713471123677914019}
@@ -34,7 +34,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5633044234729435185
+--- !u!114 &1590367726301568496
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -43,10 +43,40 @@ MonoBehaviour:
   m_GameObject: {fileID: 5633044234729435184}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3c3824a42c7404dba96669e0e63358ee, type: 3}
+  m_Script: {fileID: 11500000, guid: 8fe16a331a3c1430da481f2e8450b5fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sway_offset: {x: 1, y: 0, z: 0}
+  moved: {fileID: 0}
+  curves:
+  - serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  keyPoints:
+  - {x: -1, y: 0, z: 0}
+  - {x: 1, y: 0, z: 0}
+  speed: 2
+  waitTime: 0
+  random: 0
 --- !u!212 &5633044234729435191
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -61,6 +91,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:

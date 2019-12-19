@@ -17,7 +17,7 @@ public class Mover : MonoBehaviour
     {
         if (!moved) moved = transform;
         tr = moved;
-        origin = tr.position;
+        origin = tr.localPosition;
         for (int i=0; i<keyPoints.Length; i++){
             keyPoints[i] += origin;
         }
@@ -25,24 +25,23 @@ public class Mover : MonoBehaviour
 
     // Update is called once per frame
     int prev = -1, next = 0;
-    float timer = 0f;
+    float x = 0f;
     void Update()
     {
         if (waiting) return;
         Vector3 prev_pos = prev == -1 ? origin : keyPoints[prev];
-        timer += Time.deltaTime;
-        float x = timer * speed / (keyPoints[next]-prev_pos).magnitude;
+        x += Time.deltaTime / (keyPoints[next]-prev_pos).magnitude * speed;
         x = Mathf.Clamp(x, 0, 1);
         if (x==1) Reach();
         else{
             float y = curves[curve_idx].Evaluate(x);
-            tr.position = prev_pos + y * (keyPoints[next] - prev_pos);
+            tr.localPosition = prev_pos + y * (keyPoints[next] - prev_pos);
         }
     }
 
     int curve_idx = 0;
     void Reach(){
-        tr.position = keyPoints[next];
+        tr.localPosition = keyPoints[next];
         prev = next;
         if (random){
             next = Random.Range(0,keyPoints.Length);
@@ -51,7 +50,7 @@ public class Mover : MonoBehaviour
             next = (next+1) % keyPoints.Length;
             curve_idx = (curve_idx+1) % curves.Length;
         }
-        timer = 0f; // time since last departure
+        x = 0f; // time since last departure
         StartCoroutine(Wait());
     }
 
