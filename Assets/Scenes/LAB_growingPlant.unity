@@ -233,17 +233,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7912274cccf982489bd93bab8cebdf4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  iterations: 6
+  iterations: 2
   angle: 22.5
-  width: 0.3
-  minLeafLength: 0.3
-  maxLeafLength: 1
-  minBranchLength: 0.6
-  maxBranchLength: 2
+  width: 0.1
+  minLeafLength: 0.5
+  maxLeafLength: 0.5
+  minBranchLength: 0.5
+  maxBranchLength: 0.5
   variance: 0
-  tree: {fileID: 6419077171255347066, guid: 4a6edfa936f75c345966726d8cc7e64d, type: 3}
+  tree: {fileID: 1388452725}
   branch: {fileID: 6419077171255347066, guid: 4a6edfa936f75c345966726d8cc7e64d, type: 3}
-  leaf: {fileID: 6419077171255347066, guid: 4a6edfa936f75c345966726d8cc7e64d, type: 3}
+  leaf: {fileID: 8922962009928978963, guid: f55dfffcc685d104784ae0def7feeddb, type: 3}
 --- !u!4 &1388452727
 Transform:
   m_ObjectHideFlags: 0
