@@ -11,7 +11,7 @@ public class PauseController : MonoBehaviour
         if (!paused){
             paused = true;
             buttonText.text = "Resume";
-            Time.timeScale = 0.001f;
+            Time.timeScale = 0.0001f;
         }else{
             paused = false;
             buttonText.text = "Pause";
