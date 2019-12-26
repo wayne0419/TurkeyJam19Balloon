@@ -7,7 +7,7 @@ public class LSystem : MonoBehaviour
 {
     public int iterations;
 	public float angle;
-	public float width;
+	// public float width;
 	public float minLeafLength;
 	public float maxLeafLength;
 	public float minBranchLength;
@@ -22,7 +22,8 @@ public class LSystem : MonoBehaviour
 
 	private Dictionary<char, string> rules = new Dictionary<char, string>();
 	private Stack<SavedTransform> savedTransforms = new Stack<SavedTransform>();
-	private Vector3 initialPosition;
+	private Vector3 currentPosition;
+	private Quaternion currentRotation;
 
 	private string currentPath = "";
 	private float[] randomRotations;
@@ -35,11 +36,13 @@ public class LSystem : MonoBehaviour
 		}
 		rules.Add('X', "[-FX][+FX][FX]");
 		rules.Add('F', "FF");
-
-		Generate();
+		// rules.Add('F', "F[-F][+F]");
+		currentPosition = transform.position;
+		currentRotation = transform.rotation;
+		StartCoroutine(Generate() );
 	}
 
-	private void Generate()
+	private IEnumerator Generate()
 	{
 		currentPath = axiom;
 
@@ -57,62 +60,59 @@ public class LSystem : MonoBehaviour
 		for(int k=0; k<currentPath.Length; k++ ){
 			switch(currentPath[k])
 			{
+				
 				case 'F':
-					initialPosition = transform.position;
 					bool isLeaf = false;
 
 					GameObject currentElement;
 					if(currentPath[(k+1) % currentPath.Length] == 'X' || currentPath[(k+3) % currentPath.Length] == 'F' && currentPath[(k+4) % currentPath.Length] == 'X'){
-						currentElement = Instantiate(leaf);
 						isLeaf = true;
 					}
-					else{
-						currentElement = Instantiate(branch);
+					
+					if(isLeaf){
+						currentElement = Instantiate(leaf, currentPosition, currentRotation);
+						currentPosition += currentRotation * Vector3.up * Random.Range(minLeafLength, maxLeafLength);
 					}
-
+					else{
+						currentElement = Instantiate(branch, currentPosition, currentRotation);
+						currentPosition += currentRotation * Vector3.up * Random.Range(minBranchLength, maxBranchLength);
+					}
 					currentElement.transform.SetParent(tree.transform);
 
-					TreeElement currentTreeElement = currentElement.GetComponent<TreeElement>();
-
-					if(isLeaf){
-						transform.Translate(Vector3.up * 2f * Random.Range(minLeafLength, maxLeafLength) );
-					}
-					else{
-						transform.Translate(Vector3.up * 2f * Random.Range(minBranchLength, maxBranchLength) );
-					}
-
-					currentTreeElement.lineRenderer.startWidth = width;
-					currentTreeElement.lineRenderer.endWidth = width;
-					currentTreeElement.lineRenderer.sharedMaterial = currentTreeElement.material;
+					// TreeElement currentTreeElement = currentElement.GetComponent<TreeElement>();
+					// currentTreeElement.lineRenderer.startWidth = width;
+					// currentTreeElement.lineRenderer.endWidth = width;
+					// currentTreeElement.lineRenderer.sharedMaterial = currentTreeElement.material;
 					break;
 
 				case 'X':
 					break;
 				
 				case '+':
-					transform.Rotate(Vector3.forward * angle * (1f + variance / 100f * randomRotations[ k% randomRotations.Length]));
+					currentRotation.eulerAngles += Vector3.forward * angle * (1f + variance / 100f * randomRotations[ k% randomRotations.Length]);
+					// currentRotation.eulerAngles += Vector3.forward * angle;
+					// transform.Rotate(Vector3.forward * angle);
 					break;
 
 				case '-':
-					transform.Rotate(Vector3.back * angle * (1f + variance / 100f * randomRotations[k % randomRotations.Length]));
+					currentRotation.eulerAngles += Vector3.back * angle * (1f + variance / 100f * randomRotations[k % randomRotations.Length]);
+					// currentRotation.eulerAngles += Vector3.back * angle;
+					// transform.Rotate(Vector3.back * angle);
 					break;
 
-				case '*':
-					transform.Rotate(Vector3.up * 120f * (1f + variance / 100f * randomRotations[k%randomRotations.Length]));
-				  	break;
+				// case '*':
+				// 	transform.Rotate(Vector3.up * 120f * (1f + variance / 100f * randomRotations[k%randomRotations.Length]));
+				//   	break;
 					
-				case '/':
-					transform.Rotate(Vector3.down * 120f * (1f + variance / 100f * randomRotations[k%randomRotations.Length]));
-					break;
+				// case '/':
+				// 	transform.Rotate(Vector3.down * 120f * (1f + variance / 100f * randomRotations[k%randomRotations.Length]));
+				// 	break;
 					
 				case '[':
-				Debug.Log("pr");
-				Debug.Log(transform.position);
-				Debug.Log(transform.rotation);
 					savedTransforms.Push(
 						new SavedTransform(){
-							position = transform.position,
-							rotation = transform.rotation
+							position = currentPosition,
+							rotation = currentRotation
 						}
 					);
 					break;
@@ -120,10 +120,14 @@ public class LSystem : MonoBehaviour
 				case ']':
 					SavedTransform savedTransform = savedTransforms.Pop();
 
-					transform.position = savedTransform.position;
-					transform.rotation = savedTransform.rotation;
+					currentPosition = savedTransform.position;
+					currentRotation = savedTransform.rotation;
 					break;
 			}
+			Debug.Log(currentPath[k]);
+			Debug.Log(currentPosition);
+			Debug.Log(currentRotation.eulerAngles);
+			yield return null;
 		}
 	}
 
