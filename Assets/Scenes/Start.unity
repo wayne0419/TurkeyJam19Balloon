@@ -848,7 +848,6 @@ GameObject:
   - component: {fileID: 955623042}
   - component: {fileID: 955623041}
   - component: {fileID: 955623044}
-  - component: {fileID: 955623045}
   - component: {fileID: 955623046}
   m_Layer: 0
   m_Name: EventSystem
@@ -918,18 +917,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startKey: 330
---- !u!114 &955623045
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 955623040}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2cda31e6c44144831b86a10468c0af47, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &955623046
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1175,7 +1162,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: bf5d119d5f45542009a7ae86fa54e01a, type: 3}
+    m_Font: {fileID: 12800000, guid: fb1577f4eaf3f471f8ae65dad1b4a550, type: 3}
     m_FontSize: 80
     m_FontStyle: 0
     m_BestFit: 0
@@ -1559,7 +1546,6 @@ GameObject:
   - component: {fileID: 1733547428}
   - component: {fileID: 1733547431}
   - component: {fileID: 1733547432}
-  - component: {fileID: 1733547433}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1741,18 +1727,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   debugText: {fileID: 1650334865}
---- !u!114 &1733547433
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1733547427}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5e6c04f0ff9ee4c88be54b28cf981dc2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1768954653
 GameObject:
   m_ObjectHideFlags: 0
